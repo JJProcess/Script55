@@ -1,0 +1,82 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Create Main Window
+local Window = Rayfield:CreateWindow({
+   Name = "Void Hub",
+   LoadingTitle = "Void Hub",
+   LoadingSubtitle = "By the Void Team",
+   Theme = "Default",
+   KeySystem = true,
+   KeySettings = {
+      Title = "Void Hub Key System",
+      Subtitle = "Enter Your Key",
+      Note = "Get your key from our Discord server.",
+      Key = {"YOUR_KEY_HERE"}
+   }
+})
+
+-- Notify the user
+Rayfield:Notify({
+   Title = "Void Hub Loaded",
+   Content = "Void Hub Loaded Successfully! Have Fun! (Press Right Shift to open the interface)",
+   Duration = 5,
+   Image = nil
+})
+
+-- ** Aimbot Tab ** (Testing Basic Tab)
+local AimbotTab = Window:CreateTab("Aimbot")
+AimbotTab:CreateSection("Aimbot Settings")
+
+-- Aimbot Toggle Example
+local AimbotEnabled = false
+AimbotTab:CreateToggle({
+   Name = "Enable Aimbot",
+   Default = false,
+   Callback = function(state)
+      AimbotEnabled = state
+      print("Aimbot Enabled:", AimbotEnabled)
+   end
+})
+
+-- ** ESP Tab ** (Testing Basic Tab)
+local ESPTab = Window:CreateTab("ESP")
+ESPTab:CreateSection("ESP Settings")
+
+-- ESP Toggle Example
+local ESPEnabled = false
+ESPTab:CreateToggle({
+   Name = "Enable ESP",
+   Default = false,
+   Callback = function(state)
+      ESPEnabled = state
+      print("ESP Enabled:", ESPEnabled)
+ESPTab:CreateToggle({
+   Name = "Enable Boxes",
+   Default = false,
+   Callback = function(state)
+   BoxesEnabled = state
+   print("ESP (Boxes) Enabled:", ESPEnabled)
+   end
+})
+
+-- ** Misc Tab ** (Testing Basic Tab)
+local MiscTab = Window:CreateTab("Misc")
+MiscTab:CreateSection("Misc Settings")
+
+-- Misc Toggle Example
+local MiscEnabled = false
+MiscTab:CreateToggle({
+   Name = "Enable Misc",
+   Default = false,
+   Callback = function(state)
+      MiscEnabled = state
+      print("Misc Enabled:", MiscEnabled)
+   end
+})
+
+-- ** Settings Tab ** (Testing Basic Tab)
+local SettingsTab = Window:CreateTab("Settings")
+SettingsTab:CreateSection("Settings Section")
+
+-- Settings Label Example
+SettingsTab:CreateLabel("Settings functionality coming soon!")
